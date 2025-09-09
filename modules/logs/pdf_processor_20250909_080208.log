@@ -1,0 +1,38 @@
+2025-09-09 08:02:18,801 - PDFProcessor - INFO - Analyzing PDF fields: D:\Agent 3\10-6 (3).pdf
+2025-09-09 08:02:18,807 - PDFProcessor - INFO - Found field: {'page': 0, 'name': 'Address of Property', 'type': 'Text', 'value': '', 'rect': Rect(54.489601135253906, 160.09002685546875, 558.6099853515625, 170.04998779296875)}
+2025-09-09 08:02:18,808 - PDFProcessor - INFO - Found field: {'page': 0, 'name': 'Address on or before', 'type': 'Text', 'value': '', 'rect': Rect(68.1697006225586, 225.3599853515625, 568.1719970703125, 235.32000732421875)}
+2025-09-09 08:02:18,808 - PDFProcessor - INFO - Found field: {'page': 0, 'name': 'Contingency is not satisfied or waived by Buyer by the above date the contract will terminate', 'type': 'Text', 'value': '', 'rect': Rect(174.0, 236.280029296875, 374.3999938964844, 246.239990234375)}
+2025-09-09 08:02:18,809 - PDFProcessor - INFO - Found field: {'page': 0, 'name': '20', 'type': 'Text', 'value': '', 'rect': Rect(394.67999267578125, 236.280029296875, 435.239990234375, 246.239990234375)}
+2025-09-09 08:02:18,810 - PDFProcessor - INFO - Found field: {'page': 0, 'name': 'terminate automatically and the earnest money will be refunded to Buyer', 'type': 'Text', 'value': '', 'rect': Rect(145.32000732421875, 333.3599853515625, 244.55999755859375, 343.32000732421875)}
+2025-09-09 08:02:18,810 - PDFProcessor - INFO - Found field: {'page': 0, 'name': 'All notices and waivers must be in writing and are', 'type': 'Text', 'value': '', 'rect': Rect(504.8590087890625, 368.29901123046875, 569.5390014648438, 378.2590026855469)}
+2025-09-09 08:02:18,810 - PDFProcessor - INFO - Found field: {'page': 0, 'name': 'Signature1', 'type': 'Signature', 'value': '', 'rect': Rect(55.81489944458008, 509.6780090332031, 298.8399963378906, 541.677978515625)}
+2025-09-09 08:02:18,811 - PDFProcessor - INFO - Found field: {'page': 0, 'name': 'Signature2', 'type': 'Signature', 'value': '', 'rect': Rect(312.3680114746094, 509.6780090332031, 559.7990112304688, 541.677978515625)}
+2025-09-09 08:02:18,811 - PDFProcessor - INFO - Found field: {'page': 0, 'name': 'Signature3', 'type': 'Signature', 'value': '', 'rect': Rect(55.32529830932617, 570.3890380859375, 297.8609924316406, 602.3890380859375)}
+2025-09-09 08:02:18,811 - PDFProcessor - INFO - Found field: {'page': 0, 'name': 'Signature4', 'type': 'Signature', 'value': '', 'rect': Rect(312.85699462890625, 569.9000244140625, 559.7990112304688, 601.9000244140625)}
+2025-09-09 08:02:18,812 - PDFProcessor - INFO - Found 10 form fields
+2025-09-09 08:02:18,814 - PDFProcessor - INFO - Generating AI data for PDF: D:\Agent 3\10-6 (3).pdf
+2025-09-09 08:02:18,814 - PDFProcessor - INFO - AI data generated successfully
+2025-09-09 08:02:18,817 - PDFProcessor - INFO - Filling PDF: D:\Agent 3\10-6 (3).pdf
+2025-09-09 08:02:18,818 - PDFProcessor - INFO - Output will be saved to: D:\Agent 3\final_filled_10-6_form.pdf
+2025-09-09 08:02:18,825 - PDFProcessor - INFO - Page 1: Found 10 widgets
+2025-09-09 08:02:18,826 - PDFProcessor - INFO - Processing field: Address of Property (Type: Text, Current: )
+2025-09-09 08:02:18,827 - PDFProcessor - INFO - ✅ Filled field 'Address of Property' with: 1234 Oak Street, Austin, TX 78701
+2025-09-09 08:02:18,828 - PDFProcessor - INFO - Processing field: Address on or before (Type: Text, Current: )
+2025-09-09 08:02:18,829 - PDFProcessor - INFO - ✅ Filled field 'Address on or before' with: 1234 Oak Street, Austin, TX 78701
+2025-09-09 08:02:18,831 - PDFProcessor - INFO - Processing field: Contingency is not satisfied or waived by Buyer by the above date the contract will terminate (Type: Text, Current: )
+2025-09-09 08:02:18,835 - PDFProcessor - INFO - ✅ Filled field 'Contingency is not satisfied or waived by Buyer by the above date the contract will terminate' with: 01-09-25
+2025-09-09 08:02:18,863 - PDFProcessor - INFO - Processing field: 20 (Type: Text, Current: )
+2025-09-09 08:02:18,876 - PDFProcessor - INFO - ✅ Filled field '20' with: 2025
+2025-09-09 08:02:18,879 - PDFProcessor - INFO - Processing field: terminate automatically and the earnest money will be refunded to Buyer (Type: Text, Current: )
+2025-09-09 08:02:18,882 - PDFProcessor - INFO - ✅ Filled field 'terminate automatically and the earnest money will be refunded to Buyer' with: 01-09-25
+2025-09-09 08:02:18,884 - PDFProcessor - INFO - Processing field: All notices and waivers must be in writing and are (Type: Text, Current: )
+2025-09-09 08:02:18,898 - PDFProcessor - INFO - ✅ Filled field 'All notices and waivers must be in writing and are' with: 100,000
+2025-09-09 08:02:18,902 - PDFProcessor - INFO - Processing field: Signature1 (Type: Signature, Current: )
+2025-09-09 08:02:18,911 - PDFProcessor - INFO - ✅ Filled field 'Signature1' with: 01-09-25
+2025-09-09 08:02:18,912 - PDFProcessor - INFO - Processing field: Signature2 (Type: Signature, Current: )
+2025-09-09 08:02:18,914 - PDFProcessor - INFO - ✅ Filled field 'Signature2' with: Sarah Jane Johnson
+2025-09-09 08:02:18,915 - PDFProcessor - INFO - Processing field: Signature3 (Type: Signature, Current: )
+2025-09-09 08:02:18,917 - PDFProcessor - INFO - ✅ Filled field 'Signature3' with: 01-09-25
+2025-09-09 08:02:18,917 - PDFProcessor - INFO - Processing field: Signature4 (Type: Signature, Current: )
+2025-09-09 08:02:18,923 - PDFProcessor - INFO - ✅ Filled field 'Signature4' with: Sarah Jane Johnson
+2025-09-09 08:02:18,988 - PDFProcessor - INFO - ✅ PDF saved successfully: D:\Agent 3\final_filled_10-6_form.pdf

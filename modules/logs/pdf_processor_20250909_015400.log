@@ -1,0 +1,17 @@
+2025-09-09 01:54:00,906 - PDFProcessor - INFO - Analyzing PDF fields: D:\Agent 3\10-6 (3).pdf
+2025-09-09 01:54:00,909 - PDFProcessor - INFO - Found field: {'page': 0, 'name': 'Address of Property', 'type': 'Text', 'value': '', 'rect': Rect(54.489601135253906, 160.09002685546875, 558.6099853515625, 170.04998779296875)}
+2025-09-09 01:54:00,910 - PDFProcessor - INFO - Found field: {'page': 0, 'name': 'Address on or before', 'type': 'Text', 'value': '', 'rect': Rect(68.1697006225586, 225.3599853515625, 568.1719970703125, 235.32000732421875)}
+2025-09-09 01:54:00,911 - PDFProcessor - INFO - Found field: {'page': 0, 'name': 'Contingency is not satisfied or waived by Buyer by the above date the contract will terminate', 'type': 'Text', 'value': '', 'rect': Rect(174.0, 236.280029296875, 374.3999938964844, 246.239990234375)}
+2025-09-09 01:54:00,918 - PDFProcessor - INFO - Found field: {'page': 0, 'name': '20', 'type': 'Text', 'value': '', 'rect': Rect(394.67999267578125, 236.280029296875, 435.239990234375, 246.239990234375)}
+2025-09-09 01:54:00,918 - PDFProcessor - INFO - Found field: {'page': 0, 'name': 'terminate automatically and the earnest money will be refunded to Buyer', 'type': 'Text', 'value': '', 'rect': Rect(145.32000732421875, 333.3599853515625, 244.55999755859375, 343.32000732421875)}
+2025-09-09 01:54:00,918 - PDFProcessor - INFO - Found field: {'page': 0, 'name': 'All notices and waivers must be in writing and are', 'type': 'Text', 'value': '', 'rect': Rect(504.8590087890625, 368.29901123046875, 569.5390014648438, 378.2590026855469)}
+2025-09-09 01:54:00,919 - PDFProcessor - INFO - Found field: {'page': 0, 'name': 'Signature1', 'type': 'Signature', 'value': '', 'rect': Rect(55.81489944458008, 509.6780090332031, 298.8399963378906, 541.677978515625)}
+2025-09-09 01:54:00,919 - PDFProcessor - INFO - Found field: {'page': 0, 'name': 'Signature2', 'type': 'Signature', 'value': '', 'rect': Rect(312.3680114746094, 509.6780090332031, 559.7990112304688, 541.677978515625)}
+2025-09-09 01:54:00,919 - PDFProcessor - INFO - Found field: {'page': 0, 'name': 'Signature3', 'type': 'Signature', 'value': '', 'rect': Rect(55.32529830932617, 570.3890380859375, 297.8609924316406, 602.3890380859375)}
+2025-09-09 01:54:00,920 - PDFProcessor - INFO - Found field: {'page': 0, 'name': 'Signature4', 'type': 'Signature', 'value': '', 'rect': Rect(312.85699462890625, 569.9000244140625, 559.7990112304688, 601.9000244140625)}
+2025-09-09 01:54:00,920 - PDFProcessor - INFO - Found 10 form fields
+2025-09-09 01:54:00,926 - PDFProcessor - INFO - Generating AI data for PDF: D:\Agent 3\10-6 (3).pdf
+2025-09-09 01:54:00,926 - PDFProcessor - INFO - AI data generated successfully
+2025-09-09 01:54:00,929 - PDFProcessor - INFO - Filling PDF: D:\Agent 3\10-6 (3).pdf
+2025-09-09 01:54:00,929 - PDFProcessor - INFO - Output will be saved to: D:\Agent 3\test_filled_10-6.pdf
+2025-09-09 01:54:00,932 - PDFProcessor - ERROR - Error filling PDF: object of type 'generator' has no len()

@@ -1,0 +1,7 @@
+2025-09-09 02:01:37,215 - PDFProcessor - INFO - Analyzing PDF fields: C:\Users\Mohamed Nasir S\Downloads\10-6.pdf
+2025-09-09 02:01:37,233 - PDFProcessor - ERROR - Error analyzing PDF fields: cannot open broken document
+2025-09-09 02:01:37,234 - PDFProcessor - INFO - Generating AI data for PDF: C:\Users\Mohamed Nasir S\Downloads\10-6.pdf
+2025-09-09 02:01:37,234 - PDFProcessor - INFO - AI data generated successfully
+2025-09-09 02:01:37,239 - PDFProcessor - INFO - Filling PDF: C:\Users\Mohamed Nasir S\Downloads\10-6.pdf
+2025-09-09 02:01:37,240 - PDFProcessor - INFO - Output will be saved to: D:\Agent 3\completely_filled_10-6_form.pdf
+2025-09-09 02:01:37,242 - PDFProcessor - ERROR - Error filling PDF: cannot open broken document
