@@ -569,8 +569,16 @@ def main():
     print("This will fill ALL fields in the working PDF and send email!")
     print("=" * 50)
     
-    # Ask for confirmation
-    response = input("\nDo you want to start the final complete workflow? (y/n): ").lower().strip()
+    # Check if running in non-interactive mode (API call)
+    import sys
+    non_interactive = '--non-interactive' in sys.argv or os.getenv('NON_INTERACTIVE', '').lower() == 'true'
+    
+    if non_interactive:
+        response = 'y'
+        print("\n🤖 Running in non-interactive mode (API call)")
+    else:
+        # Ask for confirmation
+        response = input("\nDo you want to start the final complete workflow? (y/n): ").lower().strip()
     
     if response in ['y', 'yes']:
         print("\n🚀 Starting Final Complete Workflow...")

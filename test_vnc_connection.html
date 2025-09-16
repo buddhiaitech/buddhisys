@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NoVNC Connection Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        button:disabled {
+            background-color: #6c757d;
+            cursor: not-allowed;
+        }
+        .status {
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        .status.connected {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .status.disconnected {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .status.connecting {
+            background-color: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+        #vnc-container {
+            width: 100%;
+            height: 400px;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            background-color: #000;
+            margin-top: 20px;
+        }
+        .log {
+            background-color: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 4px;
+            padding: 10px;
+            margin-top: 20px;
+            height: 200px;
+            overflow-y: auto;
+            font-family: monospace;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>NoVNC Connection Test</h1>
+        <p>Test connection to your VNC server at 103.212.121.45:8080</p>
+        
+        <div class="form-group">
+            <label for="host">Host:</label>
+            <input type="text" id="host" value="103.212.121.45">
+        </div>
+        
+        <div class="form-group">
+            <label for="port">Port:</label>
+            <input type="text" id="port" value="8080">
+        </div>
+        
+        <div class="form-group">
+            <label for="path">WebSocket Path:</label>
+            <input type="text" id="path" value="/websockify">
+        </div>
+        
+        <div class="form-group">
+            <label for="username">Username (optional):</label>
+            <input type="text" id="username" value="vnc">
+        </div>
+        
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" value="123456">
+        </div>
+        
+        <button id="connectBtn" onclick="connect()">Connect</button>
+        <button id="disconnectBtn" onclick="disconnect()" disabled>Disconnect</button>
+        
+        <div id="status" class="status disconnected">Disconnected</div>
+        
+        <div id="vnc-container"></div>
+        
+        <div class="log" id="log"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@novnc/novnc@1.4.0/lib/rfb.js"></script>
+    <script>
+        let rfb = null;
+        let isConnected = false;
+
+        function log(message) {
+            const logDiv = document.getElementById('log');
+            const timestamp = new Date().toLocaleTimeString();
+            logDiv.innerHTML += `[${timestamp}] ${message}<br>`;
+            logDiv.scrollTop = logDiv.scrollHeight;
+            console.log(message);
+        }
+
+        function updateStatus(status, className) {
+            const statusDiv = document.getElementById('status');
+            statusDiv.textContent = status;
+            statusDiv.className = `status ${className}`;
+        }
+
+        function connect() {
+            if (!window.RFB) {
+                log('ERROR: NoVNC library not loaded');
+                return;
+            }
+
+            if (rfb) {
+                rfb.disconnect();
+            }
+
+            const host = document.getElementById('host').value;
+            const port = document.getElementById('port').value;
+            const path = document.getElementById('path').value;
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            const url = `ws://${host}:${port}${path}`;
+            log(`Connecting to: ${url}`);
+            log(`Credentials: username=${username}, password=${password}`);
+
+            updateStatus('Connecting...', 'connecting');
+            document.getElementById('connectBtn').disabled = true;
+
+            try {
+                rfb = new window.RFB(document.getElementById('vnc-container'), url, {
+                    credentials: { 
+                        username: username || 'vnc',
+                        password: password 
+                    },
+                    repeaterID: '',
+                    shared: true,
+                    wsProtocols: ['binary']
+                });
+
+                rfb.addEventListener('connect', () => {
+                    isConnected = true;
+                    updateStatus('Connected', 'connected');
+                    document.getElementById('connectBtn').disabled = true;
+                    document.getElementById('disconnectBtn').disabled = false;
+                    log('SUCCESS: VNC connected successfully');
+                });
+
+                rfb.addEventListener('disconnect', (e) => {
+                    isConnected = false;
+                    updateStatus('Disconnected', 'disconnected');
+                    document.getElementById('connectBtn').disabled = false;
+                    document.getElementById('disconnectBtn').disabled = true;
+                    if (e.detail.clean) {
+                        log('INFO: VNC disconnected cleanly');
+                    } else {
+                        log('ERROR: VNC connection lost');
+                    }
+                });
+
+                rfb.addEventListener('credentialsrequired', () => {
+                    updateStatus('Credentials Required', 'disconnected');
+                    document.getElementById('connectBtn').disabled = false;
+                    log('ERROR: VNC server requires credentials');
+                });
+
+            } catch (err) {
+                log(`ERROR: Connection failed: ${err}`);
+                updateStatus('Connection Failed', 'disconnected');
+                document.getElementById('connectBtn').disabled = false;
+            }
+        }
+
+        function disconnect() {
+            if (rfb) {
+                rfb.disconnect();
+            }
+            isConnected = false;
+            updateStatus('Disconnected', 'disconnected');
+            document.getElementById('connectBtn').disabled = false;
+            document.getElementById('disconnectBtn').disabled = true;
+            log('INFO: Disconnected from VNC');
+        }
+
+        // Auto-load NoVNC
+        window.addEventListener('load', () => {
+            if (window.RFB) {
+                log('INFO: NoVNC library loaded successfully');
+            } else {
+                log('ERROR: NoVNC library failed to load');
+            }
+        });
+    </script>
+</body>
+</html>
