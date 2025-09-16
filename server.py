@@ -110,7 +110,7 @@ def start_workflow(req: StartRequest):
         env['NON_INTERACTIVE'] = 'true'  # Enable non-interactive mode
         
         # Add non-interactive flag for scripts that support it
-        if req.script_path in ['final_complete_workflow.py', 'fill_and_send_workflow.py']:
+        if req.script_path in ['final_complete_workflow.py', 'fill_and_send_workflow.py', 'web_scraping_workflow.py', 'data_processing_workflow.py', 'email_automation_workflow.py', 'file_management_workflow.py']:
             python_cmd.append('--non-interactive')
         
         proc = subprocess.Popen(
