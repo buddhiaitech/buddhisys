@@ -10,8 +10,8 @@
 **Automated PDF Form Filling with AI-Powered Data Generation and Web Interface Control**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![GitHub stars](https://img.shields.io/github/stars/buddhiaitech/buddhisys.svg)](https://github.com/buddhiaitech/buddhisys/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/buddhiaitech/buddhisys.svg)](https://github.com/buddhiaitech/buddhisys/network)
+[![GitHub stars](https://img.shields.io/github/stars/intellisystech/intellisys.svg)](https://github.com/intellisystech/intellisys/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/intellisystech/intellisys.svg)](https://github.com/intellisystech/intellisys/network)
 
 </div>
 
@@ -134,8 +134,8 @@ PDF-AGENT is a comprehensive Robotic Process Automation (RPA) system that intell
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/buddhiaitech/buddhisys.git
-   cd buddhisys
+   git clone https://github.com/intellisystech/intellisys.git
+   cd intellisys
    ```
 
 2. **Set up Python environment**
@@ -244,7 +244,7 @@ curl -X POST "http://localhost:8000/workflows/stop" \
 ## 🏗️ Project Structure
 
 ```
-buddhisys/
+intellisys/
 ├── web/                          # React frontend
 │   ├── src/
 │   │   ├── components/          # Reusable UI components
@@ -332,15 +332,15 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Support
 
-For support, email support@buddhiaitech.com or create an issue in the GitHub repository.
+For support, email support@intellisystech.com or create an issue in the GitHub repository.
 
 ---
 
 <div align="center">
 
-**Made with ❤️ by [BuddhiAI Tech](https://github.com/buddhiaitech)**
+**Made with ❤️ by [IntelliSys Tech](https://github.com/intellisystech)**
 
-[![GitHub](https://img.shields.io/badge/GitHub-buddhiaitech-black?style=for-the-badge&logo=github)](https://github.com/buddhiaitech)
-[![Website](https://img.shields.io/badge/Website-buddhiaitech.com-blue?style=for-the-badge)](https://buddhiaitech.com)
+[![GitHub](https://img.shields.io/badge/GitHub-intellisystech-black?style=for-the-badge&logo=github)](https://github.com/intellisystech)
+[![Website](https://img.shields.io/badge/Website-intellisystech.com-blue?style=for-the-badge)](https://intellisystech.com)
 
 </div>
